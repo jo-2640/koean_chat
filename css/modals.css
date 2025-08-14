@@ -1,0 +1,117 @@
+/* modal-overlay: 화면 전체를 덮는 반투명한 배경 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 */
+    display: flex; /* 자식 요소를 중앙에 배치하기 위함 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    z-index: 1000; /* 다른 요소 위에 표시되도록 높게 설정 */
+    -webkit-backdrop-filter: blur(5px); /* 배경 흐림 효과 (선택사항) */
+    backdrop-filter: blur(5px); /* 배경 흐림 효과 (선택사항) */
+}
+
+/* modal: 모달의 실제 내용이 담기는 박스 */
+.modal {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 500px; /* 모달의 최대 너비 */
+    max-height: 90vh; /* 화면 높이를 넘지 않도록 설정 */
+    overflow-y: auto; /* 내용이 길어지면 스크롤 가능 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* modal-header: 모달 상단 부분 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+/* close-btn: 모달 닫기 버튼 */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* hidden: 모달을 보이지 않게 만드는 클래스 */
+.hidden {
+    display: none ;
+}
+
+/* 모달의 다른 요소들 (버튼, 입력창 등)에 대한 스타일 */
+.modal .action-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.modal .action-btn.primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.modal .action-btn.secondary {
+    background-color: #e9ecef;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+/* 폼 요소 스타일 */
+.modal-content .input-group,
+.modal-content textarea {
+    margin-bottom: 15px;
+}
+
+.modal-content textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+}
+
+/* 친구 요청 정보 스타일 */
+.request-target-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.request-target-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.request-message {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    min-height: 50px;
+    overflow-y: auto;
+}
