@@ -1,7 +1,7 @@
 // friendListDiv.js
 
 import { db } from './firebase-init.js';
-import { doc, collection, onSnapshot, getDocs, query, where, documentId } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+import { doc, collection, onSnapshot, getDocs, query, where, documentId,getDoc } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 import AppUI from './AppUI.js';
 import { SERVER_BASE_URL } from './constants.js';
 import { currentUserUid, setCurrentUser, currentUserData } from './user-data.js';

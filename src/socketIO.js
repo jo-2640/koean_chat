@@ -1,11 +1,11 @@
 console.log('socketManager.js 파일이 로드되었습니다!');
 import { auth } from './firebase-init.js'; // ⭐⭐ auth 인스턴스를 import 합니다
 import { addMessageToRoom, messagesDatabase, openChatRoom, createChatTab } from './chat.js';
-
+import { SERVER_BASE_URL} from './constants.js';
 let socket = null;
 
 // ⭐ 서버 주소 환경 변수 사용
-const SERVER_BASE_URL = import.meta.env.VITE_SERVER_BASE_URL;
+
 
 export async function getFreshToken() {
    const user = auth.currentUser;
@@ -55,6 +55,8 @@ export const initializeSocket = async (forceRefresh = false) => {
                 token: authToken,
             },
             transports: ["websocket", "polling"],
+            reconnectionAttempts: 5, // 5번만 재연결 시도
+            reconnectionDelay: 2000,
         });
     } else {
         // ⭐ 이미 연결 시도 중인 소켓이 있다면, 인증 정보만 업데이트

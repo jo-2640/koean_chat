@@ -14,9 +14,9 @@ export default defineConfig({
         main: 'index.html', // ★★★ 이 부분을 명시적으로 지정합니다. ★★★
       },
         output: { // 이전에 제가 제안했던 부분입니다. 추가하는 것을 권장합니다.
-        entryFileNames: `[name].js`,
-        chunkFileNames: `[name].js`,
-        assetFileNames: `[name].[ext]`
+        entryFileNames: `result/[name]-[hash].js`,
+        chunkFileNames: `result/[name]-[hash].js`,
+        assetFileNames: `result/[name]-[hash].[ext]`
       }
     },
   },

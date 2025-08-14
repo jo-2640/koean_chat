@@ -148,6 +148,7 @@ io.on('connection', (socket) => {
 // 7. 서버 시작
 // ----------------------------------------------------
 server.listen(port, () => {
-    console.log(`서버가 http://localhost:${port} 에서 실행 중입니다.`); 
+    serverbaseurl = process.env.SERVER_BASE_URL;
+    console.log(`서버가 ${serverbaseurl}에서 실행 중입니다.`); 
     console.log(`애플리케이션이 성공적으로 초기화되었습니다.`);
 });
