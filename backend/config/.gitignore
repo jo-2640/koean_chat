@@ -5,7 +5,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 .env # 환경 변수 파일은 반드시 Git에 포함시키면 안 됩니다!
-
+localhost.env
 # Build outputs
 dist/
 build/
