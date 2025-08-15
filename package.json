@@ -1,0 +1,25 @@
+{
+  "name": "chat-app-frontend",
+  "version": "1.0.0",
+  "description": "Chat App Frontend",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite preview",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postinstall": "chmod +x node_modules/.bin/vite"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "latest",
+    "firebase": "^10.12.2",
+    "@azure/storage-blob": "^12.1.0"
+  },
+  "devDependencies": {}
+}
