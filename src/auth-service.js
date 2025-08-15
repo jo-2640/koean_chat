@@ -291,7 +291,11 @@ console.log("--- onSnapshot 리스너가 호출되었습니다. ---");
                     welcomeMessage.textContent = `환영합니다 ${userData.nickname || '익명'} 님`;
                     myNicknameSpan.textContent = userData.nickname || user.email;
                     const authToken = localStorage.getItem('authToken');
-                    if (authToken) {
+                   console.log("--- 소켓 연결 직전 디버깅 ---");
+                          console.log(`authToken 변수에 토큰 존재 여부: ${!!authToken}`);
+                          if (authToken) {
+                              console.log(`authToken 길이: ${authToken.length}`);
+                              console.log(`authToken (앞 10자): ${authToken.substring(0, 10)}`);
                           localStorage.setItem('authToken', authToken);
                           localStorage.setItem('myUserId', currentUserUid);
                           localStorage.setItem('myUsername', currentUserNickname);
