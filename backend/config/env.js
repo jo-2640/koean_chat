@@ -1,5 +1,7 @@
 // backend/config/env.js
-require('dotenv').config({path: './config/.env'});
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config({ path: '.env' });
+}
 
 const AZURE_STORAGE_ACCOUNT_NAME = process.env.AZURE_STORAGE_ACCOUNT_NAME;
 const AZURE_STORAGE_ACCOUNT_KEY = process.env.AZURE_STORAGE_ACCOUNT_KEY;
@@ -7,7 +9,7 @@ const AZURE_CONTAINER_NAME = process.env.AZURE_CONTAINER_NAME || 'new';
 const CLIENT_BASE_URL = process.env.CLIENT_BASE_URL || 'http://localhost:5173';
 const SERVER_MIN_BIRTH_YEAR = parseInt(process.env.SERVER_MIN_BIRTH_YEAR, 10);
 const SERVER_MAX_BIRTH_YEAR = parseInt(process.env.SERVER_MAX_BIRTH_YEAR, 10);
-
+const AZURE_STORAGE_ACCOUNT_KEY = process.env.FIREBASE_ADMIN_CREDENTIALS;
 // 중요 환경 변수에 대한 기본적인 유효성 검사
 if (!AZURE_STORAGE_ACCOUNT_NAME || !AZURE_STORAGE_ACCOUNT_KEY) {
     console.error("ERROR: AZURE_STORAGE_ACCOUNT_NAME 또는 AZURE_STORAGE_ACCOUNT_KEY가 .env 파일에 설정되지 않았습니다.");
@@ -28,4 +30,5 @@ module.exports = {
     CLIENT_BASE_URL,
     SERVER_MIN_BIRTH_YEAR: Number.isInteger(SERVER_MIN_BIRTH_YEAR) ? SERVER_MIN_BIRTH_YEAR : 1950,
     SERVER_MAX_BIRTH_YEAR: Number.isInteger(SERVER_MAX_BIRTH_YEAR) ? SERVER_MAX_BIRTH_YEAR : new Date().getFullYear(),
+    FIREBASE_ADMIN_CREDENTIALS,
 };

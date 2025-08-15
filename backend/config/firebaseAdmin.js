@@ -1,7 +1,11 @@
 // backend/config/firebaseAdmin.js
 const admin = require('firebase-admin');
-const serviceAccount = require('./simplechat.json'); // 경로 조정 필요
+const { FIREBASE_ADMIN_CREDENTIALS } = require('./env');
+const serviceAccountString = process.env.FIREBASE_ADMIN_CREDENTIALS;
 
+if(!serviceAccountString){
+    throw new Error("FIREBASE_ADMIN_CREDENTIALS 환경변수가 설정되지 않았습니다.");
+}  // 경로 조정 필요
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
