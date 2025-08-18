@@ -43,6 +43,7 @@ export const initializeSocket = async (authToken) => {
         return;
     }
 
+console.log('SERVER_BASE_URL:', SERVER_BASE_URL);
     // ⭐ 소켓 인스턴스가 없거나 비활성 상태일 때만 새로 생성
     if (!socket || !socket.active) {
         socket = io(SERVER_BASE_URL, {

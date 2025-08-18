@@ -256,7 +256,7 @@ export function setupAuthListener() {
             userDocUnsubscribe();
             userDocUnsubscribe = null;
         }
-
+            console.log(`SERVER_BASE_URL:${SERVER_BASE_URL}`);
 
         if (user) {
             // ✅ 사용자 로그인 상태: user.uid를 이용해 사용자 문서에 대한 onSnapshot 리스너 설정
@@ -295,11 +295,11 @@ console.log("--- onSnapshot 리스너가 호출되었습니다. ---");
                           console.log(`authToken 변수에 토큰 존재 여부: ${!!authToken}`);
                           if (authToken) {
                               console.log(`authToken 길이: ${authToken.length}`);
-                              console.log(`authToken (앞 10자): ${authToken.substring(0, 10)}`);
+                             console.log(`authToken (앞 10자): ${authToken.substring(0, 10)}`);
                           localStorage.setItem('authToken', authToken);
                           localStorage.setItem('myUserId', currentUserUid);
                           localStorage.setItem('myUsername', currentUserNickname);
-                          console.log(`${currentUserUid}+${currentUserNickname}`);
+                         console.log(`${currentUserUid}+${currentUserNickname}`);
                           initializeSocket(authToken);
                     } else {
                            console.log('인증 토큰이 없습니다. 소켓 연결을 건너뜁니다.');

@@ -1,4 +1,6 @@
 // backend/server.js
+
+//SERVER_BASE_URL_https://koean-chat-server.onrender.com
 // ----------------------------------------------------
 // 1. 필요한 모듈 불러오기
 // ----------------------------------------------------
@@ -141,6 +143,16 @@ io.on('connection', (socket) => {
         if (!recipientSocket) {
             console.log(`[오프라인] ${senderUsername} -> ${recipientId}: 메시지를 전달할 수 없습니다.`);
         }
+    });
+    socket.on('message read', (data) => {
+    // 읽음 이벤트는 메시지를 보낸 사용자에게만 전달
+        const { chatRoomId, messageId } = data;
+        io.to(chatRoomId).emit('message acknowledged', { messageId });
+    });
+
+    // 3. 채팅방 나가기
+    socket.on('leave room', (chatRoomId) => {
+        socket.leave(chatRoomId);
     });
 });
 

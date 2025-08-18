@@ -9,13 +9,13 @@ import { getStorage } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBhiNCaeMLOK5eRZE_O6WY23gHuIPnIV6s",
-  authDomain: "simple-chat-d8861.firebaseapp.com",
-  projectId: "simple-chat-d8861",
-  storageBucket: "simple-chat-d8861.firebasestorage.app",
-  messagingSenderId: "78474404253",
-  appId: "1:78474404253:web:9d4543f5d66d67ad970f74",
-  measurementId: "G-XWRB2C5QL1"
+  apiKey: "AIzaSyAde9m8iF_aa47BWFFYxmtQmtSoa1chVCU",
+  authDomain: "volcano-chat9.firebaseapp.com",
+  projectId: "volcano-chat9",
+  storageBucket: "volcano-chat9.firebasestorage.app",
+  messagingSenderId: "975437366698",
+  appId: "1:975437366698:web:4fb0a2a484ecd7f010d7d3",
+  measurementId: "G-LE57RLRFJK"
 };
 
 // --- Firebase 앱 초기화 ---
