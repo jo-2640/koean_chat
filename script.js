@@ -14,7 +14,7 @@ import { filterDisplayUsers, applyUserFilters } from './src/allUserDiv.js';
 import { getDefaultProfileImage, showToast, resizeAndOptimizeImg, fetchCurrentYearFromServer, detailedAgeGroups, fetchBirthYearRangeFromServer} from './src/utils.js';
 import { initializeMyProfileDivUI, clearMyProfileUI } from './src/myProfileDiv.js';
 import { fillSignUpFieldsWithRandomDataTemp } from './src/temp.js';
-
+import { sendRandomQuestion } from './src/pingService.js';
 import { openChatRoom } from './src/chat.js';
 let minBirthYear = 1980; //임시 변수이나 지우면 안됨~서버값
 let serverCurrentYear = new Date().getFullYear(); //임시변수이나 지우면안됨~ 서버값

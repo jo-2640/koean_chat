@@ -6,13 +6,13 @@ import { getFirestore, collection, query, getDocs, deleteDoc, doc, writeBatch } 
 // !!! 여기에 실제 Firebase 프로젝트 설정을 입력하세요 !!!
 // script.js에 있는 initializeApp 설정을 복사해 오세요.
 const firebaseConfig = {
-  apiKey: "AIzaSyBhiNCaeMLOK5eRZE_O6WY23gHuIPnIV6s",
-  authDomain: "simple-chat-d8861.firebaseapp.com",
-  projectId: "simple-chat-d8861",
-  storageBucket: "simple-chat-d8861.firebasestorage.app",
-  messagingSenderId: "78474404253",
-  appId: "1:78474404253:web:2b826bbbbf0fb09a970f74",
-  measurementId: "G-ZGLP0C45CT"
+  apiKey: "AIzaSyAde9m8iF_aa47BWFFYxmtQmtSoa1chVCU",
+  authDomain: "volcano-chat9.firebaseapp.com",
+  projectId: "volcano-chat9",
+  storageBucket: "volcano-chat9.firebasestorage.app",
+  messagingSenderId: "975437366698",
+  appId: "1:975437366698:web:4fb0a2a484ecd7f010d7d3",
+  measurementId: "G-LE57RLRFJK"
 };
 
 const app = initializeApp(firebaseConfig);
